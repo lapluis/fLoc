@@ -21,7 +21,7 @@ classdef fLocSession
     
     properties (Constant)
         count_down = 12; % pre-experiment countdown (secs)
-        stim_size = 768; % size to display images in pixels
+        stim_size = 600; % size to display images in pixels
     end
     
     properties (Constant, Hidden)
