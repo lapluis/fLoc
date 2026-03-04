@@ -17,7 +17,7 @@ classdef fLocSequence
     properties (Constant)
         stim_conds = {'Bodies' 'Characters' 'Faces' 'Objects' 'Places'};
         stim_per_block = 12;   % number of stimuli in a block
-        stim_duty_cycle = 0.5; % duration of stimulus duty cycle (s)
+        stim_duty_cycle = 1;   % duration of stimulus duty cycle (s)
     end
     
     properties (Constant, Hidden)
