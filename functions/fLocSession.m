@@ -158,14 +158,14 @@ classdef fLocSession
                 Screen('Flip', window_ptr);
                 DrawFormattedText(window_ptr, session.instructions, 'center', 'center', tcol);
                 Screen('Flip', window_ptr);
-                get_key('g', session.keyboard);
+                get_key('s', session.keyboard);
             elseif session.trigger == 1
                 Screen('FillRect', window_ptr, bcol);
                 Screen('Flip', window_ptr);
                 DrawFormattedText(window_ptr, session.instructions, 'center', 'center', tcol); % 'flipHorizontal', 1);
                 Screen('Flip', window_ptr);
                 while 1
-                    get_key('g', session.keyboard);
+                    get_key('s', session.keyboard);
                     [status, ~] = start_scan;
                     if status == 0
                         break
@@ -233,7 +233,7 @@ classdef fLocSession
             score_str = [hit_str '\n' fa_str];
             DrawFormattedText(window_ptr, score_str, 'center', 'center', tcol);
             Screen('Flip', window_ptr);
-            get_key('g', session.keyboard);
+            get_key('s', session.keyboard);
             ShowCursor;
             Screen('CloseAll');
         end
