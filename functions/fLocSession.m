@@ -20,7 +20,7 @@ classdef fLocSession
     end
     
     properties (Constant)
-        count_down = 12; % pre-experiment countdown (secs)
+        count_down = 5; % pre-experiment countdown (secs)
         stim_size = 1800; % size to display images in pixels
     end
     
@@ -110,6 +110,7 @@ classdef fLocSession
                 save(fpath, 'seq', '-v7.3');
             else
                 load(fpath);
+                fprintf('Loaded existing stimulus sequence for session %s. \n', session.id);
             end
             session.sequence = seq;
         end
@@ -230,7 +231,7 @@ classdef fLocSession
             fa_str = ['False alarms: ' fa_cnt];
             Screen('FillRect', window_ptr, bcol);
             Screen('Flip', window_ptr);
-            score_str = [hit_str '\n' fa_str];
+            score_str = [hit_str '\n' fa_str '\n\nPress ''s'' to continue.'];
             DrawFormattedText(window_ptr, score_str, 'center', 'center', tcol);
             Screen('Flip', window_ptr);
             get_key('s', session.keyboard);
