@@ -8,10 +8,12 @@ function draw_fixation(windowPtr, center, color)
 center_x = center(1);
 center_y = center(2);
 
+multiplier = 1800 / 768;
+
 % draw horizontal bar
-Screen('FillRect', windowPtr, color, [center_x - 3 center_y - 2 center_x + 3 center_y + 2]);
+Screen('FillRect', windowPtr, color, [round(center_x - 3*multiplier) round(center_y - 2*multiplier) round(center_x + 3*multiplier) round(center_y + 2*multiplier)]);
 
 % draw vertical bar
-Screen('FillRect', windowPtr, color, [center_x - 2 center_y - 3 center_x + 2 center_y + 3]);
+Screen('FillRect', windowPtr, color, [round(center_x - 2*multiplier) round(center_y - 3*multiplier) round(center_x + 2*multiplier) round(center_y + 3*multiplier)]);
 
 end
