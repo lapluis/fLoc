@@ -108,6 +108,7 @@ classdef fLocSession
                 seq = make_runs(seq);
                 mkdir(fileparts(fpath));
                 save(fpath, 'seq', '-v7.3');
+                fprintf('Saved stimulus sequence for session %s. \n', session.id);
             else
                 load(fpath);
                 fprintf('Loaded existing stimulus sequence for session %s. \n', session.id);
