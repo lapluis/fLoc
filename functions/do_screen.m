@@ -11,7 +11,8 @@ center = rect(3:4) / 2;
 
 % set text properties
 Screen('TextFont', w, 'Times');
-Screen('TextSize', w, 24);
+Screen('TextSize', w, 60);
+Screen('TextStyle', w, 1);
 Screen('FillRect', w, 128);
 
 % hide cursor
