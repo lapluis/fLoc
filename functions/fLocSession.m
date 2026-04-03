@@ -192,6 +192,7 @@ classdef fLocSession
             % main display loop
             start_time = GetSecs;
             for ii = 1:length(stim_names)
+                fprintf('Run %d, trial %d: displaying %s... \n', run_num, ii, stim_names{ii});
                 % display blank screen if baseline and image if stimulus
                 if strcmp(stim_names{ii}, 'baseline')
                     Screen('FillRect', window_ptr, bcol);
@@ -232,9 +233,11 @@ classdef fLocSession
             fa_str = ['False alarms: ' fa_cnt];
             Screen('FillRect', window_ptr, bcol);
             Screen('Flip', window_ptr);
+            fprintf('Run %d performance: %s, %s \n', run_num, hit_str, fa_str);
             score_str = [hit_str '\n' fa_str '\n\nPress ''s'' to continue.'];
             DrawFormattedText(window_ptr, score_str, 'center', 'center', tcol);
             Screen('Flip', window_ptr);
+            fprintf('Waiting for experimenter to advance... \n');
             get_key('s', session.keyboard);
             ShowCursor;
             Screen('CloseAll');

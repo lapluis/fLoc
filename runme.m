@@ -106,6 +106,7 @@ save(fpath, 'session', '-v7.3');
 fname = [session.id '_fLocSession.mat'];
 fpath = fullfile(session.exp_dir, 'data', session.id, fname);
 for rr = start_run:(exec_runs + start_run - 1)
+    fprintf('Executing run %d of %d...\n', rr, num_runs);
     session = run_exp(session, rr);
     save(fpath, 'session', '-v7.3');
 end
